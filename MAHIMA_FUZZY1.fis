@@ -1,0 +1,40 @@
+[System]
+Name='MAHIMA_FUZZY1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Food'
+Range=[0 10]
+NumMFs=2
+MF1='Rancid':'trimf',[-4.14585835095137 0.0211416490486256 4.18814164904863]
+MF2='Delicious':'trimf',[5.78044587737843 9.94714587737843 14.1141458773784]
+
+[Input2]
+Name='Service'
+Range=[0 10]
+NumMFs=3
+MF1='Poor':'trimf',[-4.167 0 4.167]
+MF2='Good':'trimf',[0.8333 5 9.167]
+MF3='Excellent':'trimf',[5.833 10 14.17]
+
+[Output1]
+Name='Tip'
+Range=[0 30]
+NumMFs=3
+MF1='Cheap':'trimf',[-12.5 0 12.5]
+MF2='Average':'trimf',[2.5 15 27.5]
+MF3='Generous':'trimf',[17.5 30 42.51]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
